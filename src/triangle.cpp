@@ -18,6 +18,18 @@ bool is_a_triangle(float a, float b, float c)
     return is_triangle;
 }
 
+float get_perimeter(float a, float b, float c)
+{
+    return (a + b + c);
+}
+
+float get_area(float a, float b, float c)
+{
+    float half_p = get_perimeter(a, b, c) / 2;
+    float area = sqrt(half_p * (half_p - a) * (half_p - b) * (half_p - c));
+    return area;
+}
+
 int main()
 {
     float a, b, c, p, s, half_p;
@@ -34,9 +46,8 @@ int main()
     //
     if (is_triangle == true)
     {
-        p = a + b + c;
-        half_p = p / 2;
-        s = sqrt(half_p * (half_p - a) * (half_p - b) * (half_p - c));
+        p = get_perimeter(a, b, c);
+        s = get_area(a, b, c);
         std::cout << "a = " << a << std::endl;
         std::cout << "b = " << b << std::endl;
         std::cout << "c = " << c << std::endl;
@@ -63,13 +74,12 @@ int main()
     //
     if (IS_TRIANGLE == true)
     {
-        P = A + B + C;
-        HALF_P = P / 2;
-        S = sqrt(HALF_P * (HALF_P - A) * (HALF_P - B) * (HALF_P - C));
+        P = get_perimeter(A, B, C);
+        S = get_area(a, b, c);
         std::cout << "A = " << A << std::endl;
         std::cout << "B = " << B << std::endl;
         std::cout << "C = " << C << std::endl;
-        std::cout << "P = " << p << std::endl;
+        std::cout << "P = " << P << std::endl;
         std::cout << "S = " << S << std::endl;
     }
     else
