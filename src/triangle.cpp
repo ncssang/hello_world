@@ -32,7 +32,7 @@ float get_area(float a, float b, float c)
 
 int main()
 {
-    float a, b, c, p, s, half_p;
+    float a, b, c, p, s;
     std::cout << "Nhap a: ";
     std::cin >> a;
     std::cout << "Nhap b: ";
@@ -60,7 +60,7 @@ int main()
     }
     std::cout << "____\n";
 
-    float A, B, C, P, S, HALF_P;
+    float A, B, C, P, S;
     std::cout << "Nhap A: ";
     std::cin >> A;
     std::cout << "Nhap B: ";
