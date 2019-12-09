@@ -12,17 +12,17 @@ float get_euclid_distance(float xa, float ya, float xb, float yb)
 
 int main()
 {
-    float xa, ya, xb, yb, d_AB;
+    float x_a, y_a, x_b, y_b, d_AB;
 
     std::cout << "Nhap toa do xa: ";
-    std::cin >> xa;
+    std::cin >> x_a;
     std::cout << "Nhap toa do ya: ";
-    std::cin >> ya;
+    std::cin >> y_a;
     std::cout << "Nhap toa do xb: ";
-    std::cin >> xb;
+    std::cin >> x_b;
     std::cout << "Nhap toa do yb: ";
-    std::cin >> yb;
-    d_AB = get_euclid_distance(xa, ya, xb, yb);
+    std::cin >> y_b;
+    d_AB = get_euclid_distance(x_a, y_a, x_b, y_b);
 
     std::cout << "Khoang cach hai diem d_AB = " << d_AB << std::endl;
 }
