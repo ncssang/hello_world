@@ -33,23 +33,13 @@ int main()
         std::cin >> a;
     } while (a < 0);
 
-    // a = -1;
-    // while (a < 0)
-    // {
-    //     std::cout << "Nhap a: ";
-    //     std::cin >> a;
-    // }
-
-    // Print
-    if (is_a_prime_number(a) == true)
+    for (int i = 1; i < a; i++)
     {
-        std::cout << a << " is a prime number.\n";
-    }
-    else
-    {
-        std::cout << a << " is not a prime number.\n";
+        if (is_a_prime_number(i) == true)
+        {
+            std::cout << i << std::endl;
+        }
     }
 }
-
 
 // Nhap vao mot so nguyen duong a, in ra man hinh tat ca cac so nguyen to nho hon a
