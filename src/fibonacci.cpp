@@ -23,14 +23,14 @@ int Fibonacci(int n)
     // {
 
     //     int i = 3, a;
-    //     while (i < n, ++i)
+    //     while (i <= n, ++i)
     //     {
+                // a = y;
+                // y = x + y;
+                // x = a;
 
-    //         // a = x + y;
-    //         // x = y;
-    //         // y = a;
     //     }
-    //     return a;
+    //     return y;
     // }
 }
 
@@ -39,6 +39,47 @@ int main()
     int n;
     std::cout << "Nhap n: ";
     std::cin >> n;
+    int f_n = 0;
+
+    // in ra f(n)
+    if (n == 1 || n == 2)
+    {
+        f_n = 1;
+    }
+    else
+    {
+        
+        int f_pre_n = 1;
+        f_n = 1;
+        
+        for (int i = 3; i <= n; ++i)
+        {
+            int temp = f_n;
+            f_n = f_n + f_pre_n;
+            f_pre_n = temp;
+        }
+    }
+    /*
+    n = 4;
+    f_pre_n = 1;
+    f_n = 1;
+
+    //for
+    i = 3
+    temp = 1
+    f_n = 2
+    f_pre_n = 1
+    i = 4
+    temp = 2
+    f_n = 3
+    f_pre_n = 2
+    i = 5 > 4 stop
+
+    f_n = 3
+    */
+
+    std::cout << f_n << std::endl;
+
     std::cout << "So Fibonacci thu n la: " << Fibonacci(n) << std::endl;
     std::cout << "Day so fibonacci tu 1 den n:" << std::endl;
 
