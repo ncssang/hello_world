@@ -60,3 +60,11 @@ int main()
 
     return 0;
 }
+
+
+
+//viet ham tinh gia tri cua so thu n trong chuoi so fibonaci
+// int get_Fibonaci(int n)
+// {
+//     return fn;
+// }
