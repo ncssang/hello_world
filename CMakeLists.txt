@@ -28,3 +28,4 @@ add_executable(relative_position_of_2_circles src/relative_position_of_2_circles
 add_executable(projection_triangle. src/projection_triangle..cpp)
 add_executable(midperpendicular src/midperpendicular.cpp)
 add_executable(median_triangle src/median_triangle.cpp)
+add_executable(projection_3d src/projection_3d.cpp)
