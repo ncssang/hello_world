@@ -99,7 +99,6 @@ int main()
     point_B.print();
     v_AB.print();
     plane_D.print();
-    
 
     float D = (plane_D.a * v_AB.x + plane_D.b * v_AB.y + plane_D.c * v_AB.z);
     if (D == 0)
@@ -123,7 +122,6 @@ int main()
         projection.y = point_A.y + v_AB.y * T;
         projection.z = point_A.z + v_AB.z * T;
         projection.print();
-
     }
 
     return 0;
