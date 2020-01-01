@@ -5,17 +5,9 @@ struct Point3d
     float x;
     float y;
     float z;
-    Point3d(float input_x = 0, float input_y = 0, float input_z = 0)
-    {
-        // std::cout << "Constructor\n";
-        x = input_x;
-        y = input_y;
-        z = input_z;
-    }
-    void print()
-    {
-        std::cout << x << " " << y << " " << z << "\n";
-    }
+
+    Point3d(float input_x = 0, float input_y = 0, float input_z = 0);
+    void print();
 };
 
 struct Plane
@@ -24,15 +16,9 @@ struct Plane
     float b;
     float c;
     float d;
-    Plane(float default_a = 1, float default_b = 1, float default_c = 1, float default_d = 1)
-        : a(default_a), b(default_b), c(default_c), d(default_d)
-    {
-        // std::cout << "Constructor\n";
-    }
-    void print()
-    {
-        std::cout << a << " " << b << " " << c << " " << d << "\n";
-    }
+
+    Plane(float default_a = 1, float default_b = 1, float default_c = 1, float default_d = 1);
+    void print();
 };
 
 int main()
@@ -125,4 +111,28 @@ int main()
     }
 
     return 0;
+}
+
+Point3d::Point3d(float input_x, float input_y, float input_z)
+{
+    // std::cout << "Constructor\n";
+    x = input_x;
+    y = input_y;
+    z = input_z;
+}
+
+void Point3d::print()
+{
+    std::cout << x << " " << y << " " << z << "\n";
+}
+
+Plane::Plane(float default_a, float default_b, float default_c, float default_d)
+    : a(default_a), b(default_b), c(default_c), d(default_d)
+{
+    // std::cout << "Constructor\n";
+}
+
+void Plane::print()
+{
+    std::cout << a << " " << b << " " << c << " " << d << "\n";
 }

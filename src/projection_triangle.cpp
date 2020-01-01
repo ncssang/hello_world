@@ -5,18 +5,10 @@ struct Point
 {
     float x;
     float y;
-    void print()
-    {
-        std::cout << x << " " << y << std::endl;
-    }
+    void print();
 };
-float get_euclid_distance(Point point_1, Point point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float distance = sqrt(d_x * d_x + d_y * d_y);
-    return distance;
-}
+
+float get_euclid_distance(Point point_1, Point point_2);
 
 int main()
 {
@@ -33,7 +25,6 @@ int main()
     std::cin >> C.x;
     std::cout << "Enter yC: ";
     std::cin >> C.y;
-    
 
     A.print();
     B.print();
@@ -76,4 +67,17 @@ int main()
         std::cout << "x = " << D_x / D << std::endl;
         std::cout << "y = " << D_y / D << std::endl;
     }
+}
+
+void Point::print()
+{
+    std::cout << x << " " << y << std::endl;
+}
+
+float get_euclid_distance(Point point_1, Point point_2)
+{
+    float d_x = point_1.x - point_2.x;
+    float d_y = point_1.y - point_2.y;
+    float distance = sqrt(d_x * d_x + d_y * d_y);
+    return distance;
 }

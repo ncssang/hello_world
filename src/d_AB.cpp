@@ -2,13 +2,7 @@
 #include <iostream>
 #include <string>
 
-float get_euclid_distance(float xa, float ya, float xb, float yb)
-{
-    float dx = xa - xb;
-    float dy = ya - yb;
-    float distance = sqrt(dx * dx + dy * dy);
-    return distance;
-}
+float get_euclid_distance(float xa, float ya, float xb, float yb);
 
 int main()
 {
@@ -25,4 +19,12 @@ int main()
     d_AB = get_euclid_distance(x_a, y_a, x_b, y_b);
 
     std::cout << "Khoang cach hai diem d_AB = " << d_AB << std::endl;
+}
+
+float get_euclid_distance(float xa, float ya, float xb, float yb)
+{
+    float dx = xa - xb;
+    float dy = ya - yb;
+    float distance = sqrt(dx * dx + dy * dy);
+    return distance;
 }

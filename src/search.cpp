@@ -2,6 +2,7 @@
 #include <iostream>
 #include <sstream>
 #include <vector>
+
 int main()
 {
     std::ifstream input_file_stream;

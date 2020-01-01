@@ -4,28 +4,7 @@
 #include <vector>
 #include <cmath>
 
-float get_standard_deviation(std::vector<float> heights)
-{
-    float sum = 0;
-    for (size_t i = 0; i < heights.size(); ++i)
-    {
-        sum += heights[i];
-    }
-    std::cout << "Sum: " << sum << std::endl;
-
-    float average;
-    average = sum / heights.size();
-    std::cout << "Average: " << average << std::endl;
-    float D = 0;
-    for (size_t i = 0; i < heights.size(); ++i)
-    {
-        D += (heights[i] - average) * (heights[i] - average);
-    }
-
-    float SD;
-    SD = sqrt(D / (heights.size() - 1));
-    return SD;
-}
+float get_standard_deviation(std::vector<float> heights);
 
 int main()
 {
@@ -61,6 +40,28 @@ int main()
     return 0;
 }
 
+float get_standard_deviation(std::vector<float> heights)
+{
+    float sum = 0;
+    for (size_t i = 0; i < heights.size(); ++i)
+    {
+        sum += heights[i];
+    }
+    std::cout << "Sum: " << sum << std::endl;
+
+    float average;
+    average = sum / heights.size();
+    std::cout << "Average: " << average << std::endl;
+    float D = 0;
+    for (size_t i = 0; i < heights.size(); ++i)
+    {
+        D += (heights[i] - average) * (heights[i] - average);
+    }
+
+    float SD;
+    SD = sqrt(D / (heights.size() - 1));
+    return SD;
+}
 
 
 //viet ham tinh gia tri cua so thu n trong chuoi so fibonaci

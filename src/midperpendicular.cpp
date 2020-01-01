@@ -5,18 +5,11 @@ struct Point
 {
     float x;
     float y;
-    void print()
-    {
-        std::cout << x << " " << y << std::endl;
-    }
+    void print();
 };
-float get_euclid_distance(Point point_1, Point point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float distance = sqrt(d_x * d_x + d_y * d_y);
-    return distance;
-}
+
+float get_euclid_distance(Point point_1, Point point_2);
+
 int main()
 {
     Point A, B, C;
@@ -47,13 +40,11 @@ int main()
     v_AC.x = C.x - A.x;
     v_AC.y = C.y - A.y;
     std::cout << "Toa do vector AC la: " << v_AC.x << " " << v_AC.y << std::endl;
-   
 
     Point v_BC;
     v_BC.x = C.x - B.x;
     v_BC.y = C.y - B.y;
     std::cout << "Toa do vector BC la: " << v_BC.x << " " << v_BC.y << std::endl;
-   
 
     float a1, b1, c1, a2, b2, c2;
     a1 = v_AC.x;
@@ -88,4 +79,17 @@ int main()
         std::cout << "x = " << D_x / D << std::endl;
         std::cout << "y = " << D_y / D << std::endl;
     }
+}
+
+void Point::print()
+{
+    std::cout << x << " " << y << std::endl;
+}
+
+float get_euclid_distance(Point point_1, Point point_2)
+{
+    float d_x = point_1.x - point_2.x;
+    float d_y = point_1.y - point_2.y;
+    float distance = sqrt(d_x * d_x + d_y * d_y);
+    return distance;
 }
