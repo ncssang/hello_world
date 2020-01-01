@@ -1,24 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-struct Point
-{
-    float x;
-    float y;
-};
-
-struct Circle
-{
-    Point centre;
-    float radius;
-
-    void print();
-};
-
-float get_euclid_distance(Point point_1, Point point_2);
-float get_absolute(float x);
-float get_perimeter(float a, float b, float c);
-float get_area(float a, float b, float c);
+#include "hello_world/geometry.hpp"
 
 int main()
 
@@ -56,7 +39,7 @@ int main()
     }
     else
     {
-        if (distance < (get_absolute(circle_1.radius - circle_2.radius)))
+        if (distance < (fabs(circle_1.radius - circle_2.radius)))
         {
             std::cout << "Hai duong tron long nhau!\n";
         }
@@ -70,13 +53,13 @@ int main()
                 }
                 else
                 {
-                    if (distance == get_absolute(circle_1.radius - circle_2.radius))
+                    if (distance == fabs(circle_1.radius - circle_2.radius))
                     {
                         std::cout << "Hai duong trong co 1 diem tiep xuc trong!\n";
                     }
                     else
                     {
-                        if (distance > get_absolute(circle_1.radius - circle_2.radius && distance < circle_1.radius + circle_2.radius))
+                        if (distance > fabs(circle_1.radius - circle_2.radius && distance < circle_1.radius + circle_2.radius))
                         {
                             std::cout << "Hai duong tron co 2 diem tiep xuc!\n";
                             float area_c_c1_a = get_area(distance, circle_1.radius, circle_2.radius);
@@ -126,41 +109,4 @@ int main()
     return 0;
 }
 
-void Circle::print()
-{
-    std::cout << centre.x << " ";
-    std::cout << centre.y << " ";
-    std::cout << radius << std::endl;
-}
 
-float get_euclid_distance(Point point_1, Point point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float distance = sqrt(d_x * d_x + d_y * d_y);
-    return distance;
-}
-
-float get_absolute(float x)
-{
-    if (x >= 0)
-    {
-        return x;
-    }
-    else
-    {
-        return -x;
-    }
-}
-
-float get_perimeter(float a, float b, float c)
-{
-    return (a + b + c);
-}
-
-float get_area(float a, float b, float c)
-{
-    float half_p = get_perimeter(a, b, c) / 2;
-    float area = sqrt(half_p * (half_p - a) * (half_p - b) * (half_p - c));
-    return area;
-}

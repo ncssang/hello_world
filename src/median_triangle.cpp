@@ -1,15 +1,7 @@
 #include <cmath>
 #include <iostream>
 
-struct Point
-{
-    float x;
-    float y;
-
-    void print();
-};
-
-float get_euclid_distance(Point point_1, Point point_2);
+#include "hello_world/geometry.hpp"
 
 int main()
 {
@@ -55,19 +47,6 @@ int main()
     G.x = A.x + v_AG.x;
     G.y = A.y + v_AG.y;
     G.print();
-}
-
-void Point::print()
-{
-    std::cout << x << " " << y << std::endl;
-}
-
-float get_euclid_distance(Point point_1, Point point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float distance = sqrt(d_x * d_x + d_y * d_y);
-    return distance;
 }
 
 // int main()

@@ -4,17 +4,7 @@
 #include <sstream>
 #include <vector>
 
-struct Point3d
-{
-    float x;
-    float y;
-    float z;
-    void print();
-};
-
-float get_euclid_distance_squared(Point3d point_1, Point3d point_2);
-
-float get_standard_deviation(std::vector<Point3d> points);
+#include "hello_world/geometry.hpp"
 
 int main()
 {
@@ -114,49 +104,3 @@ int main()
     return 0;
 }
 
-void Point3d::print()
-    {
-        std::cout << x << " " << y << " " << z << std::endl;
-    }
-
-float get_euclid_distance_squared(Point3d point_1, Point3d point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float d_z = point_1.z - point_2.z;
-    float distance_squared = d_x * d_x + d_y * d_y + d_z * d_z;
-    return distance_squared;
-}
-
-float get_standard_deviation(std::vector<Point3d> points)
-{
-    Point3d average_point;
-    average_point.x = 0;
-    average_point.y = 0;
-    average_point.z = 0;
-    for (size_t i = 0; i < points.size(); ++i)
-    {
-        average_point.x += points[i].x;
-        average_point.y += points[i].y;
-        average_point.z += points[i].z;
-    }
-    average_point.x = average_point.x / points.size();
-    average_point.y = average_point.y / points.size();
-    average_point.z = average_point.z / points.size();
-    // average_point.x /= points.size();
-    // average_point.x /= points.size();
-    average_point.print();
-    // average_point.add_one();
-    // average_point.print();
-
-    float D = 0;
-    for (size_t i = 0; i < points.size(); ++i)
-    {
-        D += get_euclid_distance_squared(points[i], average_point);
-    }
-    float SD;
-    SD = sqrt(D/ (points.size() - 1));
-
-
-    return SD;
-}

@@ -3,18 +3,7 @@
 #include <iostream>
 #include <string>
 
-struct Point
-{
-    float x;
-    float y;
-
-    void print();
-};
-
-float get_euclid_distance(Point point_1, Point point_2);
-bool is_a_triangle(float a, float b, float c);
-float get_perimeter(float a, float b, float c);
-float get_area(float a, float b, float c);
+#include "hello_world/geometry.hpp"
 
 int main()
 {
@@ -74,44 +63,4 @@ int main()
     //     std::cout << "Not a triangle\n";
     // }
     // std::cout << "____\n";
-}
-
-void Point::print()
-{
-    std::cout << x << " " << y << std::endl;
-}
-
-float get_euclid_distance(Point point_1, Point point_2)
-{
-    float d_x = point_1.x - point_2.x;
-    float d_y = point_1.y - point_2.y;
-    float distance = sqrt(d_x * d_x + d_y * d_y);
-    return distance;
-}
-
-bool is_a_triangle(float a, float b, float c)
-{
-    bool is_triangle;
-    if (a + b < c || a + c < b || b + c < a)
-    {
-        is_triangle = false;
-    }
-    else
-    {
-        is_triangle = true;
-    }
-
-    return is_triangle;
-}
-
-float get_perimeter(float a, float b, float c)
-{
-    return (a + b + c);
-}
-
-float get_area(float a, float b, float c)
-{
-    float half_p = get_perimeter(a, b, c) / 2;
-    float area = sqrt(half_p * (half_p - a) * (half_p - b) * (half_p - c));
-    return area;
 }
